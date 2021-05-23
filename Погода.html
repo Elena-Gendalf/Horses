@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Погода</h1>
+
+<input type="text">
+
+    <p>Температура: <span id="deg"></span> °C</p>
+    <p>Ветер: <span id="wind"></span> м/сек.</p>
+    <p>Влажность: <span id="humidity"></span> %</p>
+    <p>Давление: <span id="pressure"></span> мм ртутного столба.</p>
+    <p>Направление ветра: <span id="DirectionOfTheWind"></span></p>
+    <p>Общее представление: <span id="Прилаг"></span> <span id="Существ"></span></p>
+
+    <script>
+        let translate = {
+            'overcast clouds': "пасмурные облака"
+        }
+
+        async function getReguest(url) {
+            let response = await fetch(url);
+            if (response.ok) {
+                let json = await response.json(url);
+
+                console.log(json);
+                console.log(Math.floor(json.main.temp - 273.15));
+                document.querySelector('#deg').textContent = Math.floor(json.main.temp - 273.15);
+                document.querySelector('#wind').textContent = Math.floor(json.wind.speed / 2.237);
+                document.querySelector('#humidity').textContent = Math.floor(json.main.humidity);
+                document.querySelector('#pressure').textContent = Math.floor(json.main.pressure / 1.3);
+
+                    let route;
+                let gust  = json.wind.deg;
+                if (gust > 337.5 || gust < 22.4) {
+                    route = "Северный"
+                } else if (gust > 22.5 && gust < 67.4) {
+                    route = "Северо-восточный"
+                } else if (gust > 67.5 && gust < 112.4) {
+                    route = "Восточный"
+                } else if (gust > 112.5 && gust < 157.4) {
+                    route = "Юго-восточный"
+                } else if (gust > 157.5 && gust < 202.4) {
+                    route = "Южный"
+                } else if (gust > 202.5 && gust < 247.4) {
+                    route = "Юго-западный"
+                } else if (gust > 247.5 && gust < 292.4) {
+                    route = "Западный"
+                } else if (gust > 292.5 && gust < 337.4) {
+                    route = "Северо-западный"
+                }
+                document.querySelector('#DirectionOfTheWind').textContent = route;
+
+                document.querySelector('#Существ').textContent = translate[json.weather[0].description] ?? json.weather[0].description
+            }
+        }
+
+        getReguest('http://api.openweathermap.org/data/2.5/weather?q=Москва&appid=c3f93d23f4afc931f07743b1f8a9ffc6');
+
+    </script>
+
+    <div>
+        <!--
+    337,5 - 22,5    СЕВЕР
+    22,5 - 67,5     СЕВЕРО-ВОСТОК
+    67,5 - 112,5    ВОСТОК
+    112,5 - 157,5   ЮГО-ВОСТОК
+    157,5 - 202,5   ЮГ
+    202,5 - 247,5   ЮГО-ЗАПАД
+    247,5 - 292,5   ЗАПАД
+    292,5 - 337,5   СЕВЕРО-ЗАПАД
+-->
+    </div>
+
+</body>
+
+</html>

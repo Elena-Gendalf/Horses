@@ -1,0 +1,113 @@
+/*картинки*/
+
+#p1 {
+    width: 45%;
+    height: auto;
+    float: left;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#p2 {
+    height: auto;
+    width: 40%;
+    float: right;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+    margin-bottom: 80px;
+}
+
+#p3 {
+    height: auto;
+    width: 45%;
+    float: left;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+#p4 {
+    height: auto;
+    width: 45%;
+    float: right;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    margin-top: 50px;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+
+#p5 {
+    height: auto;
+    width: 45%;
+    float: left;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#p6 {
+    height: auto;
+    width: 45%;
+    float: right;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#p7 {
+    height: auto;
+    width: 45%;
+    float: left;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#p8 {
+    height: auto;
+    width: 45%;
+    float: right;
+    border: 1px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#p9 {
+    height: auto;
+    width: 45%;
+    float: left;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#p10 {
+    height: auto;
+    width: 40%;
+    float: right;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#p11 {
+    height: auto;
+    width: 45%;
+    float: left;
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.p0 {
+    border: 2px solid rgb(70, 58, 64);
+    margin: 5px;
+    border-radius: 10px;
+}
