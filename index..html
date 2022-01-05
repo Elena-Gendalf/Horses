@@ -1,0 +1,1076 @@
+<!doctipe html>
+<html>
+
+<head>
+    <title> ПРОЕКТ JavaScript</title>
+    <meta charset="utf-8">
+    <!--<link rel="stylesheet" href="html+CSS.css">-->
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="Стили картинок(описание пород).css">
+    <link rel="stylesheet" href="Стили текста(описание пород).css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style id="Буквы">
+        #e {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #e:hover {
+            opacity: 0.7;
+        }
+        
+        #r {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        
+        #q {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #q:hover {
+            opacity: 0.7;
+        }
+        
+        #w {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        
+        .modal-content,
+        #w {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        #t {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #t:hover {
+            opacity: 0.7;
+        }
+        
+        #y {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        
+        .modal-content,
+        #y {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        #i {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #i:hover {
+            opacity: 0.7;
+        }
+        /* The Modal (background) */
+        
+        #u {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        
+        .modal-content,
+        #u {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        #o {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #o:hover {
+            opacity: 0.7;
+        }
+        
+        #p {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        
+        .modal-content,
+        #p {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        #s {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #s:hover {
+            opacity: 0.7;
+        }
+        
+        #d {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        
+        .modal-content,
+        #d {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+    </style>
+    <style id="Настройки галереи">
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+        
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+        
+        #Галерея {
+            height: 100%;
+            width: 100%;
+            max-height: 500px;
+            max-width: 1000px;
+            float: right;
+        }
+    </style>
+    <style id="Основной документ">
+        body {
+            font-size: 18px;
+            font-family: "Segoe Print";
+            background-image: url('https://image.freepik.com/free-photo/stones-texture-on-beach_1428-142.jpg');
+            background-size: 100%;
+            background-blend-mode: lighten;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        #myCarousel {
+            width: 40%;
+            height: auto;
+            float: right;
+            margin: 10px;
+        }
+        
+        .TITLE {
+            background-color: rgb(70, 58, 64, 0.7);
+            padding: 25px;
+            margin-top: 5px;
+            text-align: center;
+            /*border: 1px solid black;*/
+        }
+        
+        .Иппотерапия {
+            margin: 5px;
+            color: black;
+        }
+        
+        .tab {
+            margin-left: 5px;
+            margin-right: 5px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            background-blend-mode: lighten;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .tab button {
+            background-color: rgb(70, 58, 64);
+            float: left;
+            font-family: "Segoe Print";
+            margin: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 10px;
+            opacity: 0.7;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+        
+        .tab button:hover {
+            opacity: 1;
+        }
+        
+        .tab button.active {
+            background-color: rgb(70, 58, 64);
+            opacity: 1;
+        }
+        
+        .tabcontent {
+            display: none;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 20px;
+            background-blend-mode: lighten;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding-bottom: 50px;
+        }
+        
+        #footer {
+            height: 35%;
+            /*border: 1px solid black;
+                border-radius: 10px;*/
+            margin-top: 5px;
+            padding: 20px;
+            background-blend-mode: lighten;
+            background-color: rgba(70, 58, 64, 0.7);
+            color: black;
+        }
+        
+        #horse {
+            animation: 12s linear infinite running move;
+        }
+        
+        @keyframes move {
+            0% {
+                margin-left: -15%;
+            }
+            50% {
+                margin-left: 40%;
+            }
+            100% {
+                margin-left: 100%;
+            }
+        }
+        
+        .phrases {
+            text-align: center;
+        }
+        
+        .Амуниция {
+            float: center;
+            max-width: 95%;
+            width: max-content;
+            border: 2px solid rgb(70, 58, 64);
+            border-radius: 10px;
+        }
+        
+        a {
+            color: #000000;
+            text-decoration: none
+        }
+        
+        a:focus,
+        a:hover {
+            color: rgb(209, 194, 199);
+            text-decoration: none
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="TITLE"><strong><a name="UP">.\.\ Лошади /./.</a></strong></h1>
+
+    <img id="horse" src="https://acegif.com/wp-content/gifs/gif-horse-102.gif" width="100" height="77" alt="Лошадка">
+
+    <br>
+
+    <h3 class="Иппотерапия"><u>Иппотерапия</u> — это очень известный метод реабилитации с помощью верховой езды, но даже простое общение с лошадью может облегчить душу и боль утраты. Лошади вы можете доверить то, в чем не осмелились бы признаться лучшему другу или доктору. &copy;</h3>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">Породы</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Масти</button>
+        <button class="tablinks" onclick="openCity(event, 'Soul')">Классификации</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Алюры</button>
+        <button class="tablinks" onclick="openCity(event, 'Moscow')">Амуниция</button>
+    </div>
+
+    <div id="London" class="tabcontent active">
+        <p class="phrases">"Изящные и таинственные, преданные и надежные, умные и добрые. И если человек — венец природы, то лошадь, безусловно, её шедевр."</p>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
+                <li data-target="#myCarousel" data-slide-to="7"></li>
+                <li data-target="#myCarousel" data-slide-to="8"></li>
+                <li data-target="#myCarousel" data-slide-to="9"></li>
+                <li data-target="#myCarousel" data-slide-to="10"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <div class="item">
+                    <img src="https://static.kulturologia.ru/files/u18046/180463595.jpg" style="height:100%;max-height:350px" alt="Ахалтекинец">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Ахалтекинец</h3>
+                    </div>
+                </div>
+
+                <div class="item active">
+                    <img src="https://wikipet.ru/uploads/posts/2017-11/1511422288_fresian-4-compressor.jpg" style="height:100%;max-height:350px" alt="Фризская">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Фризская</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://stroy-podskazka.ru/images/article/orig/2019/03/loshadi-shajr-kak-oni-vyglyadyat-i-kak-ih-ispolzuyut.jpg" style="height:100%;max-height:350px" alt="Шайр">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Шайр</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://horseua.com/wp-content/uploads/2019/03/amuniciya.jpg" style="height:100%;max-height:350px" alt="Донская">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Донская</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://zoo-dom.com.ua/upload/breed/ru/0_57600000_1526555524.jpg" style="height:100%;max-height:350px" alt="Иберийская">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Иберийская</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://goferma.ru/wp-content/uploads/2017/03/GANNOVERSKIY-KON.jpg" style="height:100%;max-height:350px" alt="Ганноверская ">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Ганноверская</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://i.pinimg.com/originals/f8/ba/cb/f8bacbc8e2af041dde1dad0ccbb8ba10.png" style="height:100%;max-height:350px" alt="Голштинская ">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Голштинская</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://avatars.mds.yandex.net/get-zen_doc/3842094/pub_5f3f9340b8616b1dc29c30b7_5f3f9518df47942c9a13603f/scale_1200" style="height:100%;max-height:350px" alt="Орловский рысак">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Орловский рысак</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://pet7.ru/wp-content/uploads/2020/05/4-gnedaya-arabskaya-loshad-1024x853.jpg" style="height:100%;max-height:350px" alt="Арабская лошадь">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Арабская лошадь</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://stroy-podskazka.ru/images/article/orig/2019/03/budennovskaya-poroda-loshadej-istoriya-sozdaniya-harakteristika-i-soderzhanie-1.jpg" style="height:100%;max-height:350px" alt="Будённовская лошадь">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Будённовская лошадь</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://сельхозпортал.рф/wp-content/uploads/2016/12/andaluzskie-loshadi.jpg" style="height:100%;max-height:350px" alt="Андалузская лошадь">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Андалузская лошадь</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="background:none;">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next" style="background:none;">
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <ol>
+            <li>Ахалтекинская лошадь (ахалтекинец)</li>
+            <li>Фризская лошадь (Фриз)</li>
+            <li>Шайр (Английский тяжеловоз)</li>
+            <li>Донская лошадь</li>
+            <li>Иберийская лошадь</li>
+            <li>Ганноверская лошадь </li>
+            <li>Голштинская лошадь</li>
+            <li>Орловский рысак (орловская рысистая)</li>
+            <li>Арабская лошадь (арабская чистокровная лошадь)</li>
+            <li>Будённовская лошадь</li>
+            <li>Андалузская лошадь</li>
+        </ol>
+        <br><br><br>
+        <p class="phrases">ОСНОВНЫЕ ХАРАКТЕРИСТИКИ ПОРОД</p>
+
+        <div id="t1">
+            <strong>1) Ахалтекинская лошадь (Ахалтекинец)</strong>
+            <p><u>Происхождение:</u> Туркменистан.</p>
+            <p><u>Масть:</u> рыжая, вороная и гнедая, серая, буланая, изабелловая, соловая, караковая.</p>
+            <p><u>Рост в холке:</u> от 1,52 до 1,55 m у кобыл и от 1,55 до 1,60 m у жеребцов.</p>
+            <p><u>Экстерьер:</u> изящная голова с большими, выразительными глазами. Широкие ноздри, длинные уши идеальной формы. Прямая, длинная и тонкая шея. Грудная клетка мелкая, твердые небольшие копыта. Хвост и грива не очень густые.</p>
+            <p><u>Использование:</u> конкур, выездка.</p>
+            <p><u>Особенности:</u> энергичны, послушны, поворотливы. Славятся своей выносливостью. Без проблем переносят жару, пьют мало воды. Выделяются изяществом форм, красивыми, грациозными движениями.</p>
+            <br>
+        </div>
+
+        <img src="https://web-zoopark.ru/wp-content/uploads/2018/06/1-361.jpg" alt="Ахалтекинская" id="p1">
+
+        <div id="t2">
+            <strong>2) Фризская лошадь</strong>
+            <p><u>Происхождение:</u> Голландия.</p>
+            <p><u>Масть:</u> вороная.</p>
+            <p><u>Рост в холке:</u> от 1,52 до 1,62 m.</p>
+            <p><u>Экстерьер:</u> крупные лошади, костистые, высоконогие, с четко выраженным упряжным складом, массивные и при этом весьма элегантные.</p>
+            <p><u>Использование:</u> в упряжке, под верхом.</p>
+            <p><u>Особенности:</u> Дружелюбный нрав, нарядная внешность: струящийся хвост и грива, длинные и густые щетки на ногах.</p>
+            <br>
+        </div>
+
+        <img src="https://сельхозпортал.рф/wp-content/uploads/2017/06/frizskaja-poroda-loshadej.jpg" alt="Фризская" id="p2">
+
+        <img src="https://stroy-podskazka.ru/images/article/orig/2019/03/loshadi-shajr-kak-oni-vyglyadyat-i-kak-ih-ispolzuyut-8.jpg" alt="Шайр" id="p3">
+
+        <div id="t3">
+            <strong>3) Шайр (Английский тяжеловоз)</strong>
+            <p><u>Происхождение:</u> Великобритания.</p>
+            <p><u>Масть:</u> вороная, гнедая, рыжая, серая.</p>
+            <p><u>Рост в холке:</u> 1,65 — 1,80 m.</p>
+            <p><u>Экстерьер:</u> широкая спина и грудь, такой же крестец, большие копыта. Шайры - САМЫЕ БОЛЬШИЕ ЛОШАДИ.</p>
+            <p><u>Использование:</u> тяжелая упряжка, иногда под верхом.</p>
+            <p><u>Особенности:</u> самые сильные, крупные и тяжелые лошади.</p>
+            <br>
+        </div>
+
+        <img src="http://westernhorse.ru/images/porody/Donskaya%20loshad/don9.jpg" alt="Донская" id="p4">
+
+        <div id="t4">
+            <strong>4) Донская лошадь</strong>
+            <p><u>Происхождение:</u> Россия (Ростовская область).</p>
+            <p><u>Масть:</u> рыжая, рыже–гнедая, серая, гнедая, вороная.</p>
+            <p><u>Рост в холке:</u> 1,6-1,65 m.</p>
+            <p><u>Экстерьер:</u> широкое тело с массивным, немного удлиненным корпусом. Голова среднего размера, длинная шея, хорошо сформированная спина, длинные и сильные ноги, широкие копыта.</p>
+            <p><u>Использование:</u> в конном спорте (конкур, пробеги, троеборье, любительский спорт, хобби-класс), в обучении детей верховой езде, в упряжи (сельскохозяйственные, транспортные работы).</p>
+            <p><u>Особенности:</u> крупный рост, нарядность, крепкая конституция, выносливость, неприхотливость.</p>
+            <br>
+        </div>
+
+        <div id="t5">
+            <strong>5) Иберийская лошадь</strong>
+            <p><u>Происхождение:</u> предположительно Италия (Рим).</p>
+            <p><u>Масть:</u> гнедая и серая.</p>
+            <p><u>Рост в холке:</u> от 1,52 до 1,7 m.</p>
+            <p><u>Экстерьер:</u> красивая, гибкая, с мощным коротким корпусом, с большими глазами в форме миндаля.</p>
+            <p><u>Использование:</u> военные подготовки, выездки, цирковые шоу, упряжки, высшая школа, конкур.</p>
+            <p><u>Особенности:</u> по своему нраву очень сбалансирована, смела и разумна. Лошади этой породы очень домашни, любят людей и привязываются к хозяевам. </p>
+            <br>
+        </div>
+
+        <img src="http://egida.by/_pu/21/73076143.jpg" alt="Иберийская" id="p5">
+
+        <img src="https://zooclub.ru/attach/37000/37281.jpg" alt="Ганноверская" id="p6">
+
+        <div id="t6">
+            <strong>6) Ганноверская лошадь</strong>
+            <p><u>Происхождение:</u> Германия</p>
+            <p><u>Масть:</u> любые одноцветные. Кроме того, для ганноверских лошадей характерны белые пятна.</p>
+            <p><u>Рост в холке:</u> от 1,6 до 1,68 м. Впрочем, некоторые особи достигают и 1,75 м.</p>
+            <p><u>Экстерьер:</u> голова средних размеров, с большими выразительными глазами. Длинная шея и плечи, ярко выраженная холка. Глубокий сильный корпус. Мускулистый круп и ноги.</p>
+            <p><u>Использование:</u> в конном спорте, конкуре и выездке. Идеальные спортивные и верховые лошади.</p>
+            <p><u>Особенности:</u> имеют отменную мощь при средней резвости. Поэтому, больше используются именно в конкуре и выездке. Подвижны, имеют мощный прыжок.</p>
+            <br>
+        </div>
+
+        <div id="t7">
+            <strong>7) Голштинская лошадь</strong>
+            <p><u>Происхождение:</u> Германия.</p>
+            <p><u>Масть:</u> вороной, серый, гнедой.</p>
+            <p><u>Рост в холке:</u> 1,67 - 1,73 m.</p>
+            <p><u>Экстерьер:</u> массивные предплечья широко расположены, пясти широки у основания и пропорциональны, запястья плотные и мощные.</p>
+            <p><u>Использование:</u> конкур, выездка.</p>
+            <p><u>Особенности:</u> горделивость, покладистый характер, величественная поступь и высокая каретная ходьба.</p>
+            <br>
+        </div>
+
+        <img src="https://ferma-nasele.ru/wp-content/uploads/2017/06/1-169.jpg" alt="" id="p7">
+
+        <div id="t8">
+            <strong>8) Орловский рысак (орловская рысистая)</strong>
+            <p><u>Происхождение:</u> Россия (Воронежская губерния)</p>
+            <p><u>Масть:</u> светло-серая, серая, серая в яблоках, красно-серая, темно-серая, вороная, гнедая. Реже – чалая и рыжая. Очень редко – буланая и соловая.</p>
+            <p><u>Рост в холке:</u> 1,57 - 1,7 m.</p>
+            <p><u>Экстерьер:</u> гармонично сложенная упряжная лошадь. Голова небольшого размера, сухая. Шея с лебединым изгибом, высоко поставлена. Спина – крепкая и мускулистая, прочные ноги.</p>
+            <p><u>Использование:</u> универсальная порода. Беговой спорт, сельскохозяйственные работы, упряжка, туризм. Также используются в качестве племенного материала.</p>
+            <p><u>Особенности:</u> крупная фигура, сухое телосложение, пышные хвост и грива, гордая осанка, грациозные движения.</p>
+            <br>
+        </div>
+
+        <img src="https://zooschool.ru/attach/img/670.jpg" alt="Орловский рысак" id="p8">
+
+        <div id="t9">
+            <strong>9) Арабская лошадь (арабская чистокровная лошадь)</strong>
+            <p><u>Происхождение:</u> Аравийский полуостров.</p>
+            <p><u>Масть:</u> серая, рыжая, вороная и гнедая.</p>
+            <p><u>Рост в холке:</u> от 1,47 до 1,55 m. В среднем, у кобыл – 1,506 m, у жеребцов – 1,534 m.</p>
+            <p><u>Экстерьер:</u> голова небольшая, вогнутый профиль, маленькие уши и широкие ноздри. Широкая грудь. Высоко посаженный, мягкий и шелковистый хвост.</p>
+            <p><u>Использование:</u> конные пробеги, скачки. Арабских лошадей используют в скрещивании.</p>
+            <p><u>Особенности:</u> арабские лошади очень выносливы – при росте не более 1,53 м в холке они без труда несут на себе взрослых наездников. Кроме того, арабские скакуны регулярно принимают участие в конных пробегах, последний этап которых предусматривает
+                прохождения дистанции в 161 км (100 миль) за 1 день. Отличаются долголетием и крепким здоровьем.</p>
+            <br>
+        </div>
+
+        <img src="https://happy-horses.ru/wp-content/uploads/2012/08/arab1.jpg" alt="Арабская" id="p9">
+
+        <div id="t10">
+            <strong>10) Будённовская лошадь</strong>
+            <p><u>Происхождение:</u> Россия (Ростовская область).</p>
+            <p><u>Масть:</u> рыжая. Гораздо реже – гнедая и бурая масти.</p>
+            <p><u>Рост в холке:</u> 1,6 - 1,78 m.</p>
+            <p><u>Экстерьер:</u> Прямой профиль, длинный изогнутый затылок, широкая грудь, прямая спина, правильная постановка ног, хорошо развитые скакательные суставы, широкая пясть.</p>
+            <p><u>Использование:</u> спортивные дисциплины, конные прогулки.</p>
+            <p><u>Особенности:</u> ярко выраженные верховые формы, крупные, широкотелые, костистые.</p>
+            <br>
+        </div>
+        <img src="https://happy-horses.ru/wp-content/uploads/2014/03/xBudenny09.jpg.pagespeed.ic.I8sj5_wETc.webp" alt="Будённовская" id="p10">
+
+        <div id="t11">
+            <strong>11) Андалузская лошадь</strong>
+            <p><u>Происхождение:</u> Испания.</p>
+            <p><u>Масть:</u> серая, вороная, гнедая.</p>
+            <p><u>Рост в холке:</u> 1,6 m у жеребцов и 1,55 m у кобыл.</p>
+            <p><u>Экстерьер:</u> грива и хвост очень объёмные и весьма длинные, высоко поставленные уши, ноги визуально короче, чем у других крупных пород, не больщие копыта, выразительные миндалевидные глаза, карсивый изгиб шеи. </p>
+            <p><u>Использование:</u> спортивная выездка, цирковые представления.</p>
+            <p><u>Особенности:</u> очень послушна, терпелива и в целом имеет добрый нрав. Испанки умны и хорошо поддаются дрессуре, причем выполняют команды охотно и без капризов. </p>
+        </div>
+
+        <img src="https://сельхозпортал.рф/wp-content/uploads/2016/12/andaluzskaja-poroda-1-1.jpg" alt="" id="p11">
+
+
+
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <p class="phrases">"Красота лошади удивительна... Смотреть на нее во всем блеске великолепия никому не надоест."</p>
+
+        <div id="Галерея">
+
+
+
+            <!--Вороная-->
+
+
+
+
+
+            <img id="q" src="https://i.pinimg.com/originals/de/c7/6d/dec76d41097fd45a1e97d48c3ebcf0bb.jpg" alt="Вороная" style="height:100%;max-height:200px">
+
+            <div id="m" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img01">
+                <div id="w"></div>
+            </div>
+
+            <script>
+                var modal = document.getElementById('m');
+
+                var img = document.getElementById('q');
+                var modalImg = document.getElementById("img01");
+                var wText = document.getElementById("w");
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    wText.innerHTML = this.alt;
+                }
+
+                var span = document.getElementsByClassName("close")[0];
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+
+
+
+
+
+
+
+            <!--Гнедая-->
+
+
+
+
+
+
+
+
+
+            <img id="e" src="https://agronomu.com/media/res/3/3/6/1/2/33612.or2wz0.700x575.jpg" alt="Гнедая" style="height:100%;max-height:200px">
+
+            <div id="n" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img02">
+                <div id="r"></div>
+            </div>
+
+            <script>
+                var modal = document.getElementById('n');
+
+                var img = document.getElementById('e');
+                var modalImg = document.getElementById("img02");
+                var rText = document.getElementById("r");
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    rText.innerHTML = this.alt;
+                }
+
+                var span = document.getElementsByClassName("close")[1];
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+
+
+
+
+            <!--Рыжая-->
+
+
+
+
+
+            <img id="t" src="https://moiloshadki.ru/wp-content/uploads/2016/04/rig9.jpg" alt="Рыжая" style="height:100%;max-height:200px">
+
+            <div id="b" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img03">
+                <div id="y"></div>
+            </div>
+
+            <script>
+                var modal = document.getElementById('b');
+
+                var img = document.getElementById('t');
+                var modalImg = document.getElementById("img03");
+                var yText = document.getElementById("y");
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    yText.innerHTML = this.alt;
+                }
+
+                var span = document.getElementsByClassName("close")[2];
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+
+
+
+
+
+
+
+
+
+            <!--Бурая-->
+
+
+
+
+
+            <img id="i" src="https://krasivosti.pro/uploads/posts/2021-04/1618226574_24-p-buraya-mast-loshadi-loshadi-krasivo-foto-25.jpg" alt="Бурая" style="height:100%;max-height:200px">
+
+            <div id="v" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img04">
+                <div id="u"></div>
+            </div>
+
+            <script>
+                var modal = document.getElementById('v');
+
+                var img = document.getElementById('i');
+                var modalImg = document.getElementById("img04");
+                var uText = document.getElementById("u");
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    uText.innerHTML = this.alt;
+                }
+
+                var span = document.getElementsByClassName("close")[3];
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+
+
+
+
+
+
+
+
+            <!--Серая-->
+
+
+
+
+
+
+
+            <img id="o" src="https://image.jimcdn.com/app/cms/image/transf/dimension=4096x4096:format=jpg/path/sb32f9ba6c947ac88/image/i45fb74c00dbce40b/version/1378493669/image.jpg" alt="Серая" style="height:100%;max-height:200px">
+
+            <div id="с" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img05">
+                <div id="p"></div>
+            </div>
+
+            <script>
+                var modal = document.getElementById('с');
+
+                var img = document.getElementById('o');
+                var modalImg = document.getElementById("img05");
+                var pText = document.getElementById("p");
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    pText.innerHTML = this.alt;
+                }
+
+                var span = document.getElementsByClassName("close")[4];
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+
+
+
+
+
+
+
+
+
+            <!--Альбинос-->
+
+
+
+
+
+
+
+
+            <img id="s" src="https://zooclub.ru/attach/37000/37069.jpg" alt="..." style="height:100%;max-height:200px">
+
+            <div id="x" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img06">
+                <div id="d"></div>
+            </div>
+
+            <script>
+                var modal = document.getElementById('x');
+
+                var img = document.getElementById('s');
+                var modalImg = document.getElementById("img06");
+                var dText = document.getElementById("d");
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    dText.innerHTML = this.alt;
+                }
+
+                var span = document.getElementsByClassName("close")[5];
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+        </div>
+
+        <ol>
+            <li>Вороная лошадь</li>
+            <li>Гнедая лошадь</li>
+            <li>Рыжая лошадь</li>
+            <li>Бурая лошадь</li>
+            <li>Серая лошадь</li>
+            <li>Лошадь-альбинос</li>
+            <hr>
+        </ol>
+        <ul>
+            <li>Караковая масть</li>
+            <li>Буланая масть</li>
+            <li>Игреневая масть</li>
+            <li>Соловая масть</li>
+            <li>Чалая масть</li>
+            <li>Саврасая масть</li>
+            <li>Мышастая масть</li>
+            <li>Пегая масть</li>
+            <li>Чубарая масть</li>
+        </ul>
+    </div>
+
+    <div id="Soul" class="tabcontent">
+        <p>Породы лошадей разделяют на виды - группы с особенностями использования. Выделяют всего 4 вида:</p>
+        <ol>
+            <li>Верховые</li>
+            <li>Упряжные</li>
+            <li>Верхово-упряжные</li>
+            <li>Тяжеловозы</li>
+        </ol>
+        <p>Так же существует разделение лошадей по ореалам обитания: </p>
+        <ul>
+            <li>Лесные</li>
+            <li>Горные</li>
+            <li>Степные</li>
+        </ul>
+        <p>Классифицируют лошадей и по происхождению:</p>
+        <ol>
+            <li>Аборигены</li>
+            <li>Переходные</li>
+            <li>Заводские</li>
+        </ol>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <p class="phrases">"Лошадь — это поэзия в движении."</p>
+        <p><u>Аллюр</u> — вид поступательного движения лошади. Различают естественные аллюры (они свойственны любому животному в природных условиях) и искусственные (требуют специального обучения). К первым относятся <b>шаг</b>, <b>рысь</b>, <b>галоп</b>;
+            ко вторым, например, <b>пассаж</b>, <b>испанский шаг</b>, <b>пиаффе</b> и др. <b>Иноходь</b> — достаточно редкий естественный аллюр некоторых лошадей, но он может быть выработан искусственным путем.</p>
+    </div>
+
+    <div id="Moscow" class="tabcontent">
+        <p class="phrases">"Если лошадь захочет вас сбросить — она вас сбросит. Со шпорами или без шпор. Лошади носят нас в порядке одолжения. И не только носят, но и делятся порой частичкой своей грации."</p>
+        <img src="http://www.petsfusion.com/data/media/224.jpg" alt="лошадь/амуниция" style="float: right; margin-right: 10%;" width="30%">
+        <ol>
+            <li><a href="#уздечка">Треньзельное оголовье (уздечка)</a></li>
+            <li><a href="#Седло">Седло</a></li>
+            <li><a href="#Попона">Попона</a></li>
+            <li><a href="#Ногавки">Ногавки</a></li>
+            <li><a href="#Бинты">Бинты</a></li>
+            <li><a href="#кабуры">Резиновые кобуры</a></li>
+            <li><a href="#Корда">Корда</a></li>
+            <li><a href="#Шамбарьер">Шамбарьер</a></li>
+            <li><a href="#Хлыст">Хлыст</a></li>
+            <li><a href="#Мартингал">Мартингал</a></li>
+            <li><a href="#Подкова">Мартингал</a></li>
+            <li><a href="#Стремя">Стремя</a></li>
+        </ol>
+        <br>
+        <a name="уздечка"><strong>Треньзельное оголовье (уздечка)</strong> </a>
+        <p>Трензельное оголовье - система ремней, одевающаяся на морду лошади, чтобы ей управлять. В различных конструкциях оголовьев те или иные ремни могут отсутствовать.</p>
+        <img src="https://lh3.googleusercontent.com/proxy/yaTIgrPoWCoa0rT6Ld8JcAO9U6_2mZEgc25rH5l5YnAXusqkb3hMclo3Reuwj_IgZdDT45zbeZVXXjHBwU-HMmP0r1laq5QwtvYJ_wVv0nPHnhuNKY3637hemWZXJb3bFO4lTTSRSmViI7dAThUTFrjdhbGjfFiXlw40LjjtcIY" alt="уздечка" class="Амуниция">
+        <br><br>
+        <a name="Седло"><strong>Седло</strong> </a>
+        <p>Они должны максимально облегчить передвижение лошади на всех аллюрах и при прыжках. Спортивные седла подразделяются на седла для конкура, троеборья, для высшей школы верховой езды (выездка), вольтижировки (на них выполняют специальные гимнастические
+            упражнения) и для обучения верховой езде (учебные седла). Учебные седла более просты по своей конструкции и обычно изготавливаются из дешевых материалов.</p>
+        <img src="https://cs8.pikabu.ru/post_img/big/2016/07/25/3/1469416801123921673.jpg" alt="Седло" class="Амуниция" style="margin-left:2%;">
+        <br><br>
+        <a name="Попона"><strong>Попона</strong> </a>
+        <p>Для предохранения лошади от переохлаждения применяют попону, а для предотвращения травм во время тренировок и соревнований — бинты, ногавки и резиновые кабуры. Используется при перевозках лошадей, резком понижении температуры в конюшне, для защиты
+            разгоряченной лошади и для согревания больной. Изготавливается она обычно из шерстяной ткани и с помощью застежек крепится на теле лошади.</p>
+        <img src="https://horseua.com/wp-content/uploads/2019/03/zimniaya_popona.jpg" alt="Попона" class="Амуниция" style="margin-left:2%;">
+        <br><br>
+        <a name="Ногавки"><strong>Ногавки</strong> </a>
+        <p>Чтобы избежать ушибов и других повреждений ног лошади, часто поверх бинтов накладывают на пясти кожаные ногавки. На ноге ногавка застегивается или зашнуровывается.</p>
+        <img src="https://avanti-horse.ru/upload/iblock/5c7/5c77c93c397529e5a094ccfc83d8bbde.jpg" alt="Ногавки" class="Амуниция" style="margin-left:2%;">
+        <br><br>
+        <a name="Бинты"><strong>Бинты</strong> </a>
+        <p>Специальные хлопчатобумажные бинты применяются для бинтования ног лошади. Они предохраняют сухожилия и связки от растяжений.</p>
+        <img src="https://sedla.ru/images/blackhorse1.png" alt="Бинты" class="Амуниция" style="margin:2%;">
+        <br><br>
+        <a name="кобуры"><strong>Резиновые кобуры</strong> </a>
+        <p>Для предохранения венчиков ног от зарубок (ссадины и раны при ударе копытом или подковкой одной ноги по венчику другой во время движения лошади) на копыта натягивают резиновые кабуры.</p>
+        <img src="https://pets2.me/media/res/2/3/6/4/9/23649.pb4y4c.840.jpg" alt="кобуры" class="Амуниция">
+        <br><br>
+        <a name="Корда"><strong>Корда</strong> </a>
+        <p>Во время приручения лошади, обучения ее прыжкам, приемам выездки, а также при ее разминке пользуются кордой — тесьмяной гладкой лентой длиной 10 — 15 м и шириной 4 см. На одном ее конце имеется ремень, застегивающийся на пряжку, а на другом —
+            петля длиной около 20 см. Когда корда применяется при разминке лошади в манеже, спортсмен пристегивает корду к правому или левому кольцу трензеля и отходит от животного на несколько метров, распуская ленту корды. Затем он пропускает одну руку
+            в петлю, а другой регулирует натяжение корды. Хорошо выезженные лошади двигаются по кругу на любом аллюре, подчиняясь командам спортсмена, громко и отчетливо произносимым вслух: "Шаг!", "Рысь!", "Галоп!". При движении лошади налево корду держат
+            в левой руке, при движении направо — в правой.</p>
+        <img src="http://equiflow.ru/wp-content/uploads/2017/02/c12d18_612d882701b5419c9811c9a1d9251d43mv2_d_4864_2986_s_4_2.jpg" alt="Корда" class="Амуниция">
+        <br><br>
+        <a name="Шамбарьер"><strong>Шамбарьер</strong> </a>
+        <p>Длинный хлыст, применяемый в цирке дрессировщиками лошадей, для регулирования движения на корде молодых, ленивых и непослушных животных, при обучении лошадей прыжкам через препятствия и основным элементам выездки.</p>
+        <img src="https://lh3.googleusercontent.com/proxy/wC_PguH_MCknku6HrjuVwIEa7n3R9Vd2F7B3IqZ7cmydi5Rb3-YaUyG4cnBSyI9urx7B0X3qQiK0r8e-t3kiVvdBZJ5-VWopLK3ISvncJp6KRvJX1uWSNQ" alt="Шамбарьер" class="Амуниция">
+        <br><br>
+        <a name="Хлыст"><strong>Хлыст</strong> </a>
+        <p>Это достаточно гибкий прут длиной 50 — 70 см и толщиной 1 см. На конце хлыста для смягчения удара укреплена хлопушка. Сев на лошадь, хлыст держат в правой руке опущенным вниз. Мягким прикосновением хлыста к боку лошади всадник указывает ей, что
+            она не выполнила его требование. Для многих лошадей вполне достаточно одного ощущения хлыста в руке всадника.</p>
+        <img src="https://uralmaster.me/files/uploads/IMG_20190121_192855.jpg" alt="Хлыст" class="Амуниция">
+        <br><br>
+        <a name="Мартингал"><strong>Мартингал</strong> </a>
+        <p>К уздечке иногда пристегивают мартингал. Так называют приспособление, которое не дает лошадям, очень высоко задирающим голову, поднимать ее выше определенного уровня. Если лошадь задирает голову, ею трудно управлять, а откинув голову назад, она
+            может ударить затылком всадника. Один конец мартингала крепится к подпруге седла; через кольца двух других свободно пропускаются поводья. При обучении верховой езде применяют вспомогательные средства управления лошадью: хлыст, шпоры, корда
+            и бич.</p>
+        <img src="https://new-best-horse.com/images/thumbnails/567/567/detailed/7/6207_1.jpg" alt="Мартингал" class="Амуниция">
+        <br><br>
+        <a name="Подкова"><strong>Подкова</strong></a>
+        <p>Железная дуга, которую гвоздями прибивают к копыту лошади, чтобы оградить его от повреждений и стирания.</p>
+        <img src="https://pets2.me/media/res/2/4/4/3/2/24432.pbbywc.840.jpg" alt="Подкова" class="Амуниция">
+        <br><br>
+
+        <a name="Стремя"><strong>Стремя</strong></a>
+        <p>Железная дужка с ушком, подвешиваемая на ремне к седлу для упора ног всадника.</p>
+        <img src="https://pets2.me/media/res/2/2/8/5/7/22857.paz3pc.840.jpg" alt="Стремя" class="Амуниция">
+
+    </div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent ");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none ";
+            }
+            tablinks = document.getElementsByClassName("tablinks ");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active ", " ");
+            }
+            document.getElementById(cityName).style.display = "block ";
+            evt.currentTarget.className += " active ";
+        }
+    </script>
+
+
+
+    <div id="footer">
+        <br>
+        <p class="phrases"><a href="#UP"> Вверх!</a></p>
+        <p class="phrases">Автор проекта: Елена Насекан</p>
+        <p class="phrases">Обратная связь: <a href="https://vk.com/id612995926">VK.com</a></p>
+        <p class="phrases">Создано при поддержке <a href="https://bootstrap-4.ru/">Bootstrap_4</a>, <a href="http://htmlbook.ru/">html-book</a></p>
+
+    </div>
+
+</body>
+
+</html>
